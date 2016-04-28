@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="pasamelo" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Miguel\\documents\\visual\ studio\ 2015\\Projects\\MotorEnvio\\MotorEnvio\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Miguel\\documents\\visual\ studio\ 2015\\Projects\\MotorEnvio\\MotorEnvio\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+</parameters>

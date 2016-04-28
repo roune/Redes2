@@ -1,0 +1,2 @@
+C:\Users\Miguel\documents\visual studio 2015\Projects\MotorEnvio\MotorEnvio\obj\Release\MotorEnvio.njsprojResolveAssemblyReference.cache
+C:\Users\Miguel\documents\visual studio 2015\Projects\MotorEnvio\MotorEnvio\bin\Microsoft.NodejsTools.WebRole.dll
