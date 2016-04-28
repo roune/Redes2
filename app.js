@@ -35,6 +35,9 @@ function load() {
         files[header.id].chuncks = [];
         if (confirm("Desea aceptar el archivo " + header.name)) {
             socket.emit('accept', header.id, true);
+            var progressBar = '<div class="progress">  <div class="progress-bar" id="file-' + header.id + '" role="progressbar" style="width:0"> ' + header.name + '</div></div>';
+            document.getElementById("downloads").innerHTML += progressBar;
+            //document.getElementById("downloads").style.visibility = "visible";
         } else {
             socket.emit('accept', header.id, false);
             delete files[header.id];
@@ -42,6 +45,8 @@ function load() {
     });
     socket.on('newPart', function (part) {
         files[part.id].chuncks.push(part);
+        console.log(files[part.id].chuncks.length / files[part.id].parts);
+        document.getElementById("file-" + part.id).style.width = String((files[part.id].chuncks.length / files[part.id].parts)*100) + "%";
         if (files[part.id].chuncks.length == files[part.id].parts) {
             files[part.id].chuncks.sort(function (a, b) {
                 return a.order - b.order;
@@ -97,10 +102,10 @@ function createDivDragger(id) {
 }
 
 function sendChuncks(part) {
+    console.log("Emiting part " + part.id);
     socket.emit('newPart', part);
 }
 
-//send files
 function sendFile(e) {
     stopHoverEfect(e);
     
